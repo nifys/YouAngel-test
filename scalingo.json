@@ -1,0 +1,31 @@
+## 6. **scalingo.json** (конфигурация Scalingo)
+```json
+{
+  "name": "telegram-angel-bot",
+  "description": "Telegram бот для связи пользователей с администраторами",
+  "website": "https://your-bot.osc-fr1.scalingo.io/",
+  "repository": "https://github.com/yourusername/telegram-angel-bot",
+  "formation": {
+    "worker": {
+      "amount": 1,
+      "size": "S"
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Токен вашего Telegram бота от @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "ID владельца бота (8294608065)",
+      "value": "8294608065",
+      "required": true
+    }
+  }
+}
